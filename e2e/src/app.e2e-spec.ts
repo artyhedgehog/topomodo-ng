@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { AppMainPage } from './app.po';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('ToPomoDo App', () => {
+  let page: AppMainPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new AppMainPage();
   });
 
-  it('should display welcome message', () => {
+  it('should have a header', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to topomodo-ng!');
+    expect(page.getPageTitle()).toEqual('ToPomoDo App');
   });
 });
