@@ -7,23 +7,27 @@
 </div>
 
 <main>
-  <div>
+  <form #commentToAdd="ngForm" (ngSubmit)="addComment(commentToAdd)">
     <label>
       Comment:
-      <input title="New comment text" type="text" class="add-comment__text-input">
+      <input type="text"
+             name="commentText"
+             ngModel
+             required
+             title="New comment text"
+             class="add-comment__text-input">
     </label>
     <button type="submit" class="add-comment__submit-button">
       Add
     </button>
-  </div>
+  </form>
 
-  <section>
-    <div class="comments-list__comment-text">
-      My first comment text
-    </div>
-    <div class="comments-list__comment-text">
-      Another thought
-    </div>
+  <section class="comments-list">
+    <ul>
+      <li class="comments-list__comment-text" *ngFor="let commentText of comments">
+        {{ commentText }}
+      </li>
+    </ul>
   </section>
 </main>
 

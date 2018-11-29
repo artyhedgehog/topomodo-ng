@@ -15,10 +15,14 @@ describe('ToPomoDo App', () => {
   it('should display added comments', async () => {
     page.navigateTo();
 
+    expect(page.getComments().map(c => c.getText())).toEqual([]);
+
     const firstComment = 'My first comment text';
 
     page.getAddCommentInput().sendKeys(firstComment);
     page.getAddCommentSubmit().click();
+
+    expect(page.getComments().map(c => c.getText())).toEqual([firstComment]);
 
     const anotherThought = 'Another thought';
 
@@ -29,8 +33,6 @@ describe('ToPomoDo App', () => {
 
     page.getAddCommentInput().sendKeys(notSaved);
 
-    const comments = page.getComments();
-
-    expect(comments.map(comment => comment.getText())).toEqual([firstComment, anotherThought]);
+    expect(page.getComments().map(c => c.getText())).toEqual([firstComment, anotherThought]);
   });
 });
