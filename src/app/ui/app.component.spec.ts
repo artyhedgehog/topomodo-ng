@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing'
 import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
+import { StoreModule } from '@ngrx/store'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,7 +11,8 @@ describe('AppComponent', () => {
         AppComponent
       ],
       imports: [
-        FormsModule
+        FormsModule,
+        StoreModule.forRoot(() => {}),
       ],
     }).compileComponents()
   }))
