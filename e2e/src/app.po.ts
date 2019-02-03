@@ -2,22 +2,22 @@ import { browser, by, element, ElementArrayFinder } from 'protractor';
 
 export class AppMainPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/')
   }
 
   getPageTitle() {
-    return browser.getTitle();
+    return browser.getTitle()
   }
 
   getAddCommentInput() {
-    return element(by.css('app-root .add-comment__text-input'));
+    return element(by.css('app-root .add-comment__text-input'))
   }
 
   getAddCommentSubmit() {
-    return element(by.css('app-root .add-comment__submit-button'));
+    return element(by.css('app-root .add-comment__submit-button'))
   }
 
   getComments(): ElementArrayFinder {
-    return element.all(by.css('app-root .comments-list__comment-text'));
+    return element.all(by.css('app-root .comments-list__comment-text'))
   }
 }

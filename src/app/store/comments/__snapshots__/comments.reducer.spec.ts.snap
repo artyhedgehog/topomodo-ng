@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`commentsReducer on AddComment leaves old state unchanged 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "text": "A comment",
+    },
+    Object {
+      "text": "One more comment",
+    },
+  ],
+}
+`;
+
+exports[`commentsReducer returns unmodified state for no action 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "text": "A comment",
+    },
+    Object {
+      "text": "One more comment",
+    },
+  ],
+}
+`;
+
+exports[`commentsReducer returns unmodified state for unknown action 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "text": "A comment",
+    },
+    Object {
+      "text": "One more comment",
+    },
+  ],
+}
+`;

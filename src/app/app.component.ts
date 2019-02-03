@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,12 @@ import { NgForm } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'topomodo-ng';
-
-  comments = [];
+  title = 'topomodo-ng'
+  comments: Array<{}> = []
 
   addComment(commentToAdd: NgForm) {
-    this.comments.push(commentToAdd.value.commentText);
-    commentToAdd.resetForm();
+    this.comments.push(commentToAdd.value.commentText)
+    commentToAdd.resetForm()
+    const a = { foo: 'bar' }
   }
 }

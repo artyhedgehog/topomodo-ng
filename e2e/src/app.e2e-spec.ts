@@ -1,38 +1,38 @@
-import { AppMainPage } from './app.po';
+import { AppMainPage } from './app.po'
 
 describe('ToPomoDo App', () => {
-  let page: AppMainPage;
+  let page: AppMainPage
 
   beforeEach(() => {
-    page = new AppMainPage();
-  });
+    page = new AppMainPage()
+  })
 
   it('should have a header', () => {
-    page.navigateTo();
-    expect(page.getPageTitle()).toEqual('ToPomoDo App');
-  });
+    page.navigateTo()
+    expect(page.getPageTitle()).toEqual('ToPomoDo App')
+  })
 
   it('should display added comments', async () => {
-    page.navigateTo();
+    page.navigateTo()
 
-    expect(page.getComments().map(c => c.getText())).toEqual([]);
+    expect(page.getComments().map(c => c.getText())).toEqual([])
 
-    const firstComment = 'My first comment text';
+    const firstComment = 'My first comment text'
 
-    page.getAddCommentInput().sendKeys(firstComment);
-    page.getAddCommentSubmit().click();
+    page.getAddCommentInput().sendKeys(firstComment)
+    page.getAddCommentSubmit().click()
 
-    expect(page.getComments().map(c => c.getText())).toEqual([firstComment]);
+    expect(page.getComments().map(c => c.getText())).toEqual([firstComment])
 
-    const anotherThought = 'Another thought';
+    const anotherThought = 'Another thought'
 
-    page.getAddCommentInput().sendKeys(anotherThought);
-    page.getAddCommentSubmit().click();
+    page.getAddCommentInput().sendKeys(anotherThought)
+    page.getAddCommentSubmit().click()
 
-    const notSaved = 'Something I am not going to save';
+    const notSaved = 'Something I am not going to save'
 
-    page.getAddCommentInput().sendKeys(notSaved);
+    page.getAddCommentInput().sendKeys(notSaved)
 
-    expect(page.getComments().map(c => c.getText())).toEqual([firstComment, anotherThought]);
-  });
-});
+    expect(page.getComments().map(c => c.getText())).toEqual([firstComment, anotherThought])
+  })
+})
